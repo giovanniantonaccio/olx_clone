@@ -20,6 +20,7 @@ class Tabs extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border(
               right: BorderSide(color: Colors.grey, width: 0.5),
+              bottom: BorderSide(color: Colors.grey, width: 0.5),
             ),
           ),
         ),
@@ -30,7 +31,8 @@ class Tabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation: 10,
+      elevation: 10.0,
+      shadowColor: Colors.black,
       child: Row(
         children: <Widget>[
           _button(context, 'DDD 92...'),

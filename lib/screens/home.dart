@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:olx_clone/components/product_card.dart';
 import 'package:olx_clone/components/tabs.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,10 +23,12 @@ class _HomePageState extends State<HomePage> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
+            tooltip: 'Buscar',
             onPressed: () {},
           ),
           IconButton(
             icon: Icon(Icons.favorite_border),
+            tooltip: 'Salvar busca',
             onPressed: () {},
           )
         ],
@@ -34,6 +37,21 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: <Widget>[
             Tabs(),
+            Expanded(
+                child: InkWell(
+              onTap: () {},
+              child: ListView.separated(
+                itemCount: 10,
+                itemBuilder: (BuildContext context, int index) {
+                  return ProductCard();
+                },
+                separatorBuilder: (BuildContext context, int index) {
+                  return Container(
+                    height: 1,
+                  );
+                },
+              ),
+            )),
           ],
         ),
       ),
